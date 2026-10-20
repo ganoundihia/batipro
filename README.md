@@ -3,6 +3,16 @@
 🔗 **Démo en ligne : https://batipro-web.onrender.com**
 (hébergement gratuit : la première ouverture peut prendre environ 30 secondes)
 
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![Socket.IO](https://img.shields.io/badge/Socket.IO-temps%20réel-010101?logo=socket.io)
+![SQLite](https://img.shields.io/badge/SQLite-node%3Asqlite-003B57?logo=sqlite&logoColor=white)
+![Render](https://img.shields.io/badge/déployé%20sur-Render-46E3B7?logo=render&logoColor=black)
+
+| Accueil | Marketplace |
+|---|---|
+| ![Page d'accueil Batipro](docs/screenshots/accueil.png) | ![Marketplace avec filtres](docs/screenshots/marketplace.png) |
+
 Batipro est une plateforme web dédiée au secteur du bâtiment en Algérie. Elle réunit au même endroit
 les matériaux de construction, les artisans qualifiés et les services pour réaliser ses projets.
 
@@ -50,3 +60,34 @@ les matériaux de construction, les artisans qualifiés et les services pour ré
 
 ### Site responsive
 - Utilisable sur téléphone, tablette et ordinateur
+
+## Stack technique
+
+| Couche | Technologies |
+|---|---|
+| Front | React (Create React App), React Router, Axios, Socket.IO client |
+| API | Node.js, Express, Multer (upload d'images), Socket.IO |
+| Base de données | SQLite (module natif `node:sqlite`), données de démo générées au démarrage |
+| Déploiement | Render (Blueprint `render.yaml` : API Node + site statique) |
+
+## Lancer en local
+
+Prérequis : Node.js 22.5 ou plus récent (pour `node:sqlite`).
+
+```bash
+# 1. API (http://127.0.0.1:8000)
+cd backend
+cp .env.example .env
+npm install
+npm run seed      # crée la base SQLite avec les données de démo
+npm run dev
+
+# 2. Front (http://localhost:3000), dans un second terminal
+cd FrontBatirpro-main
+cp .env.example .env
+npm install
+npm start
+```
+
+L'architecture détaillée (routes, schéma de base, messagerie temps réel) est décrite dans
+[`docs/TECHNIQUE.md`](docs/TECHNIQUE.md).
