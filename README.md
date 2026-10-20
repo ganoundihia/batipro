@@ -83,7 +83,7 @@ npm run seed      # crée la base SQLite avec les données de démo
 npm run dev
 
 # 2. Front (http://localhost:3000), dans un second terminal
-cd FrontBatirpro-main
+cd frontend
 cp .env.example .env
 npm install
 npm start

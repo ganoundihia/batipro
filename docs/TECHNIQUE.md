@@ -4,8 +4,8 @@ Plateforme du bâtiment : marketplace de matériaux, profils de professionnels (
 recrutement, commandes, avis et **messagerie en ligne en temps réel**.
 
 ```
-batibro/
-├── FrontBatirpro-main/   # Front React (Create React App)
+batipro/
+├── frontend/             # Front React (Create React App)
 │   └── src/
 │       ├── api/          # client HTTP (axios), Socket.IO, panier
 │       └── messages/     # page Messagerie + badge des non-lus
@@ -22,7 +22,7 @@ batibro/
 ## Organisation du front
 
 ```
-FrontBatirpro-main/src/
+frontend/src/
 ├── index.css          # socle commun : couleurs, typographie, boutons, formulaires, grilles
 ├── App.js             # routes (site public, compte, espace admin, page 404)
 ├── api/               # client HTTP, Socket.IO, panier/favoris, catégories
@@ -52,7 +52,7 @@ npm run seed              # données de démonstration
 npm start                 # http://127.0.0.1:8000
 
 # 2. Front (autre terminal)
-cd FrontBatirpro-main
+cd frontend
 npm install
 cp .env.example .env      # REACT_APP_API_URL doit pointer vers le backend
 npm start                 # http://localhost:3000
@@ -60,7 +60,7 @@ npm start                 # http://localhost:3000
 
 > Sur ce poste, le port 8000 est déjà occupé par un conteneur Docker : les fichiers `.env`
 > locaux utilisent donc **8010** (`backend/.env` : `PORT=8010`, `PUBLIC_URL=http://127.0.0.1:8010` ;
-> `FrontBatirpro-main/.env` : `REACT_APP_API_URL=http://127.0.0.1:8010`).
+> `frontend/.env` : `REACT_APP_API_URL=http://127.0.0.1:8010`).
 
 `npm run reset-db` (dans `backend/`, serveur arrêté) supprime la base et la recrée avec les données de démo.
 Sur une base existante, `npm run seed` ajoute seulement les éléments manquants (par exemple les offres) sans rien effacer.

@@ -44,7 +44,7 @@ setupSocket(server);
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
     console.error(`Le port ${PORT} est déjà utilisé. Changez PORT (et PUBLIC_URL) dans backend/.env,`);
-    console.error('puis REACT_APP_API_URL dans FrontBatirpro-main/.env.');
+    console.error('puis REACT_APP_API_URL dans frontend/.env.');
     process.exit(1);
   }
   throw err;

@@ -24,7 +24,7 @@ services:
   - type: web
     name: batipro-web
     runtime: static
-    rootDir: FrontBatirpro-main
+    rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: build
     envVars:
